@@ -5,5 +5,16 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\sort">
+      <UniqueIdentifier>{3c298e95-b3b9-43d0-9457-41d138c0753a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sort.h">
+      <Filter>Source Files\sort</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertionSort.h">
+      <Filter>Source Files\sort</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
