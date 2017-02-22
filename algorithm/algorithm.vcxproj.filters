@@ -16,5 +16,8 @@
     <ClInclude Include="InsertionSort.h">
       <Filter>Source Files\sort</Filter>
     </ClInclude>
+    <ClInclude Include="BubbleSort.h">
+      <Filter>Source Files\sort</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,5 @@
 #pragma once
 #include "sort.h"
-#include <memory>
 
 class InsertionSort : public Sort {
 public:

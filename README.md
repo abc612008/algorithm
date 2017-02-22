@@ -5,5 +5,5 @@ THE LIBRARY IS WRITTEN FOR THE PURPOSES FOR LEARNING ONLY, AVOID USING IT IN REA
 
 ## Plan
 - [x] 插入排序 Insertion Sort
-- [ ] 冒泡排序 Bubble Sort
+- [x] 冒泡排序 Bubble Sort
 - [ ] 链表 Linked List
