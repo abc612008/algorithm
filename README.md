@@ -10,6 +10,7 @@ THE LIBRARY IS WRITTEN FOR THE PURPOSES FOR LEARNING ONLY, AVOID USING IT IN REA
 - [x] 选择排序 Selection Sort
 - [ ] 归并排序 Merge sort
 - [ ] 快速排序 Quicksort
+
 ### Data structures
 - [x] 链表 Linked List
 - [ ] 栈 Stack
