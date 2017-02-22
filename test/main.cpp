@@ -1,6 +1,8 @@
 #include "gtest/gtest.h"
 #include "../algorithm/InsertionSort.h"
 #include "../algorithm/BubbleSort.h"
+#include "../algorithm/LinkedList.h"
+
 TEST(Sort, SortChecker) {
     int arr1[] = { 1,3,5,9,12,17 };
     int arr2[] = { 3,3,5,9,12,12 };
@@ -47,6 +49,36 @@ TEST(Sort, InsertionSort) {
 
 TEST(Sort, BubbleSort) {
     sortTest<BubbleSort>();
+}
+
+TEST(Structures, LinkedList) {
+    LinkedList list; //[]
+    EXPECT_EQ(list.size(), 0);
+    list.insertHead(0); //[0]
+    list.insert(list.getHead(), 1); //[0, 1]
+    list.insert(list.getHead(), 2); //[0, 2, 1]
+    list.insert(1, 5); //[0, 2, 5, 1]
+    list.insertHead(8); //[8, 0, 2, 5, 1]
+    EXPECT_EQ(list.size(), 5);
+    EXPECT_EQ(list.get(0), 8);
+    EXPECT_EQ(list.get(1), 0);
+    EXPECT_EQ(list.get(2), 2);
+    EXPECT_EQ(list.get(3), 5);
+    EXPECT_EQ(list.get(4), 1);
+    list.set(3, 7); //[8, 0, 2, 7, 1]
+    EXPECT_EQ(list.get(3), 7);
+    list.removeAfter(list.getNode(1)->getNext()); //[8, 0, 2, 1]
+    list.remove(0); //[0, 2, 1]
+    EXPECT_EQ(list.size(), 3);
+    EXPECT_EQ(list.get(0), 0);
+    EXPECT_EQ(list.get(1), 2);
+    EXPECT_EQ(list.get(2), 1);
+    list.remove(1); //[0, 1]
+    EXPECT_EQ(list.size(), 2);
+    EXPECT_EQ(list.get(0), 0);
+    EXPECT_EQ(list.get(1), 1);
+    list.clear(); //[]
+    EXPECT_EQ(list.size(), 0);
 }
 
 int main(int argc, char* argv[]) {

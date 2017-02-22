@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="InsertionSort.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="sort.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

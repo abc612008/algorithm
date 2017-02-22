@@ -5,19 +5,25 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\sort">
+    <Filter Include="Source Files\structures">
+      <UniqueIdentifier>{a7b01b26-3a5e-45f2-b02c-bf39bce5742a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sorting">
       <UniqueIdentifier>{3c298e95-b3b9-43d0-9457-41d138c0753a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sort.h">
-      <Filter>Source Files\sort</Filter>
+      <Filter>Source Files\sorting</Filter>
     </ClInclude>
     <ClInclude Include="InsertionSort.h">
-      <Filter>Source Files\sort</Filter>
+      <Filter>Source Files\sorting</Filter>
     </ClInclude>
     <ClInclude Include="BubbleSort.h">
-      <Filter>Source Files\sort</Filter>
+      <Filter>Source Files\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Source Files\structures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
