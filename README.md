@@ -11,7 +11,7 @@ THE LIBRARY IS WRITTEN FOR THE PURPOSES FOR LEARNING ONLY, AVOID USING IT IN REA
 - [ ] 归并排序 Merge sort
 - [ ] 快速排序 Quicksort
 ### Data structures
-- [ ] 链表 Linked List
+- [x] 链表 Linked List
 - [ ] 栈 Stack
 - [ ] 队列 Queue
 - [ ] 堆 Heap
