@@ -13,7 +13,7 @@ THE LIBRARY IS WRITTEN FOR THE PURPOSES FOR LEARNING ONLY, AVOID USING IT IN REA
 
 ### Data structures
 - [x] 链表 Linked List
-- [ ] 栈 Stack
+- [x] 栈 Stack
 - [ ] 队列 Queue
 - [ ] 堆 Heap
 - [ ] 散列表 Hash
