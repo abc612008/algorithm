@@ -25,5 +25,8 @@
     <ClInclude Include="LinkedList.h">
       <Filter>Source Files\structures</Filter>
     </ClInclude>
+    <ClInclude Include="SelectionSort.h">
+      <Filter>Source Files\sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

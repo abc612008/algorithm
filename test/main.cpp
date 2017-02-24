@@ -2,6 +2,7 @@
 #include "../algorithm/InsertionSort.h"
 #include "../algorithm/BubbleSort.h"
 #include "../algorithm/LinkedList.h"
+#include "../algorithm/SelectionSort.h"
 
 TEST(Sort, SortChecker) {
     int arr1[] = { 1,3,5,9,12,17 };
@@ -49,6 +50,10 @@ TEST(Sort, InsertionSort) {
 
 TEST(Sort, BubbleSort) {
     sortTest<BubbleSort>();
+}
+
+TEST(Sort, SelectionSort) {
+    sortTest<SelectionSort>();
 }
 
 TEST(Structures, LinkedList) {

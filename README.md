@@ -7,7 +7,7 @@ THE LIBRARY IS WRITTEN FOR THE PURPOSES FOR LEARNING ONLY, AVOID USING IT IN REA
 ### Sorting Algorithm
 - [x] 插入排序 Insertion Sort
 - [x] 冒泡排序 Bubble Sort
-- [ ] 选择排序 Selection Sort
+- [x] 选择排序 Selection Sort
 - [ ] 归并排序 Merge sort
 - [ ] 快速排序 Quicksort
 ### Data structures
