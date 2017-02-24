@@ -1,5 +1,5 @@
 #pragma once
-using DataType = int;
+#include "DataType.h"
 
 class LinkedList {
 public:

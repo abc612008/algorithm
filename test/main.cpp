@@ -3,6 +3,7 @@
 #include "../algorithm/BubbleSort.h"
 #include "../algorithm/LinkedList.h"
 #include "../algorithm/SelectionSort.h"
+#include "../algorithm/Stack.h"
 
 TEST(Sort, SortChecker) {
     int arr1[] = { 1,3,5,9,12,17 };
@@ -84,6 +85,45 @@ TEST(Structures, LinkedList) {
     EXPECT_EQ(list.get(1), 1);
     list.clear(); //[]
     EXPECT_EQ(list.size(), 0);
+}
+
+TEST(Structures, Stack) {
+    Stack<3> stack;
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    EXPECT_EQ(stack.get(), 3);
+    EXPECT_EQ(stack.size(), 3);
+    stack.pop();
+    EXPECT_EQ(stack.get(), 2);
+    EXPECT_EQ(stack.size(), 2);
+    stack.clear();
+    EXPECT_EQ(stack.size(), 0);
+    try {
+        stack.get();
+        FAIL() << "Expected StackUnderflow";
+    } catch (StackUnderflow&) {} catch (...) {
+        FAIL() << "Expected StackUnderflow";
+    }
+    stack.push(1);
+    stack.pop();
+    try {
+        stack.pop();
+        FAIL() << "Expected StackUnderflow";
+    } catch (StackUnderflow&) {}
+    catch (...) {
+        FAIL() << "Expected StackUnderflow";
+    }
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    try {
+        stack.push(4);
+        FAIL() << "Expected StackOverflow";
+    } catch (StackOverflow&) {}
+    catch (...) {
+        FAIL() << "Expected StackOverflow";
+    }
 }
 
 int main(int argc, char* argv[]) {

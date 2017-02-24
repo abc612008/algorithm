@@ -28,5 +28,11 @@
     <ClInclude Include="SelectionSort.h">
       <Filter>Source Files\sorting</Filter>
     </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Source Files\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="DataType.h">
+      <Filter>Source Files\structures</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
