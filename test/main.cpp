@@ -1,4 +1,6 @@
 #include "gtest/gtest.h"
+#include <cstdlib>
+#include <unordered_map>
 #include "../algorithm/InsertionSort.h"
 #include "../algorithm/BubbleSort.h"
 #include "../algorithm/LinkedList.h"
@@ -6,43 +8,74 @@
 #include "../algorithm/Stack.h"
 #include "../algorithm/MergeSort.h"
 
+bool sortCheck(SortType* arr, SortType* src, size_t len) {
+    std::unordered_map<int, int> srcNumberCount;
+    std::unordered_map<int, int> targetNumberCount;
+    for (size_t i = 0; i < len; ++i)
+        srcNumberCount[src[i]]++;
+
+    targetNumberCount[arr[0]]++;
+    for (size_t i = 1; i < len; ++i) {
+        targetNumberCount[arr[i]]++;
+        if (arr[i - 1]>arr[i]) return false;
+    }
+
+    for (auto n : srcNumberCount)
+        if (targetNumberCount[n.first] != n.second) return false;
+
+    return true;
+}
+
 TEST(Sort, SortChecker) {
     int arr1[] = { 1,3,5,9,12,17 };
+    int arr1s1[] = { 1,3,5,9,12,12 };
+    int arr1s2[] = { 1,12,5,3,9,17 };
     int arr2[] = { 3,3,5,9,12,12 };
-    EXPECT_TRUE(SortChecker::check(arr1, sizeof(arr1) / sizeof(int)));
-    EXPECT_TRUE(SortChecker::check(arr2, sizeof(arr2) / sizeof(int)));
+    int arr2s1[] = { 12,3,3,5,9,3 };
+    int arr2s2[] = { 5,3,12,3,9,12 };
+    EXPECT_TRUE(sortCheck(arr1, arr1s2, sizeof(arr1) / sizeof(int)));
+    EXPECT_TRUE(sortCheck(arr2, arr2s2, sizeof(arr2) / sizeof(int)));
+    EXPECT_FALSE(sortCheck(arr1, arr1s1, sizeof(arr1) / sizeof(int)));
+    EXPECT_FALSE(sortCheck(arr2, arr2s1, sizeof(arr2) / sizeof(int)));
+
     int arr3[] = { 1,3,2,9,12,17 };
     int arr4[] = { 5,3,3,9,12,17 };
     int arr5[] = { 1,3,5,9,12,11 };
-    EXPECT_FALSE(SortChecker::check(arr3, sizeof(arr3) / sizeof(int)));
-    EXPECT_FALSE(SortChecker::check(arr4, sizeof(arr4) / sizeof(int)));
-    EXPECT_FALSE(SortChecker::check(arr5, sizeof(arr5) / sizeof(int)));
+    EXPECT_FALSE(sortCheck(arr3, arr3, sizeof(arr3) / sizeof(int)));
+    EXPECT_FALSE(sortCheck(arr4, arr4, sizeof(arr4) / sizeof(int)));
+    EXPECT_FALSE(sortCheck(arr5, arr5, sizeof(arr5) / sizeof(int)));
 }
-
+static void randomArray(SortType* arr, size_t len) {
+    for (size_t i = 0; i < len; ++i) arr[i] = rand();
+}
 template<class T>
 void sortTest() {
     {
         constexpr size_t len = 100;
         constexpr size_t test = 100;
         int arr[len];
+        int src[len];
         for (size_t i = 0; i < test; ++i) {
-            SortChecker::random(arr, len);
+            randomArray(arr, len);
+            memcpy(src, arr, len*sizeof(int));
             T sort;
             sort(arr, len);
-            EXPECT_TRUE(SortChecker::check(arr, len));
+            EXPECT_TRUE(sortCheck(arr, src, len));
         }
     }
     {
         T sort2;
         int arr2[] = { 1 };
+        int src2[] = { 1 };
         sort2(arr2, 1);
-        EXPECT_TRUE(SortChecker::check(arr2, 1));
+        EXPECT_TRUE(sortCheck(arr2, src2, 1));
     }
     {
         T sort3;
         int arr3[] = { 2,1 };
+        int src3[] = { 2,1 };
         sort3(arr3, 1);
-        EXPECT_TRUE(SortChecker::check(arr3, 1));
+        EXPECT_TRUE(sortCheck(arr3, src3, 1));
     }
 }
 
