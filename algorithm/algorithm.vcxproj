@@ -23,6 +23,7 @@
     <ClInclude Include="DataType.h" />
     <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="sort.h" />
     <ClInclude Include="Stack.h" />

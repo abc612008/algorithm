@@ -34,5 +34,8 @@
     <ClInclude Include="DataType.h">
       <Filter>Source Files\structures</Filter>
     </ClInclude>
+    <ClInclude Include="MergeSort.h">
+      <Filter>Source Files\sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
