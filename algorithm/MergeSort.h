@@ -21,16 +21,16 @@ private:
 
         // For each loop, choose the smaller one into the buffer,
         // until one of the arrays are running out of numbers.
-        while (i < mid&&j < end)
+        while (i <= mid&&j <= end)
             buffer[p++] = arr[i] < arr[j] ? arr[i++] : arr[j++];
 
         // These two lines should copy the remaining number into the buffer.
         // Only one (or neither) of the two lines will take effect.
-        while (i < mid) buffer[p++] = arr[i++];
-        while (j < end) buffer[p++] = arr[j++];
+        while (i <= mid) buffer[p++] = arr[i++];
+        while (j <= end) buffer[p++] = arr[j++];
 
         // Copy the buffer into the target array.
-        for (size_t l = start; l < end; ++l)
+        for (size_t l = start; l <= end; ++l)
             arr[l] = buffer[l];
     }
 };
