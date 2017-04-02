@@ -7,6 +7,8 @@
 #include "../algorithm/SelectionSort.h"
 #include "../algorithm/Stack.h"
 #include "../algorithm/MergeSort.h"
+#include "../algorithm/Quicksort.h"
+#include "../algorithm/BinarySearch.h"
 
 bool sortCheck(SortType* arr, SortType* src, size_t len) {
     std::unordered_map<int, int> srcNumberCount;
@@ -45,9 +47,11 @@ TEST(Sort, SortChecker) {
     EXPECT_FALSE(sortCheck(arr4, arr4, sizeof(arr4) / sizeof(int)));
     EXPECT_FALSE(sortCheck(arr5, arr5, sizeof(arr5) / sizeof(int)));
 }
+
 static void randomArray(SortType* arr, size_t len) {
     for (size_t i = 0; i < len; ++i) arr[i] = rand();
 }
+
 template<class T>
 void sortTest() {
     {
@@ -93,6 +97,34 @@ TEST(Sort, SelectionSort) {
 
 TEST(Sort, MergeSort) {
     sortTest<MergeSort>();
+}
+
+TEST(Sort, Quicksort) {
+    sortTest<Quicksort<false>>();
+}
+
+TEST(Search, BinarySearch) {
+    constexpr size_t arraySize = 100;
+    auto testCount = 100;
+    while(testCount-->0) {
+        SearchType arr[arraySize];
+        arr[0] = 0;
+        for(size_t i=1;i<arraySize;++i) {
+            arr[i] = arr[i - 1] + rand();
+        }
+        size_t index = rand() % arraySize;
+        EXPECT_EQ(index, binarySearch(arr, arraySize, arr[index]));
+        size_t target_not_found = 0;
+        bool success = false;
+        while(!success) {
+            target_not_found = rand();
+            success = true;
+            for (size_t i = 0; i<arraySize; ++i) {
+                if (arr[i] == target_not_found) success = false;
+            }
+        }
+        EXPECT_EQ(arraySize, binarySearch(arr, arraySize, target_not_found));
+    }
 }
 
 TEST(Structures, LinkedList) {

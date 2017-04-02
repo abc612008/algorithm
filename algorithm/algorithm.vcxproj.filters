@@ -11,6 +11,9 @@
     <Filter Include="Source Files\sorting">
       <UniqueIdentifier>{3c298e95-b3b9-43d0-9457-41d138c0753a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\search">
+      <UniqueIdentifier>{f6736981-dbb9-498f-a222-8a8e77a705c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sort.h">
@@ -36,6 +39,12 @@
     </ClInclude>
     <ClInclude Include="MergeSort.h">
       <Filter>Source Files\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="Quicksort.h">
+      <Filter>Source Files\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearch.h">
+      <Filter>Source Files\search</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -17,7 +17,7 @@ private:
 
         // Now arr[start...mid] and arr[mid+1...end] should be sorted.
         // Merge the two sorted array into the buffer.
-        int i = start, j = mid + 1, p = start;
+        size_t i = start, j = mid + 1, p = start;
 
         // For each loop, choose the smaller one into the buffer,
         // until one of the arrays are running out of numbers.
