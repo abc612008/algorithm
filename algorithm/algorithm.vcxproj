@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="DataType.h" />
     <ClInclude Include="InsertionSort.h" />

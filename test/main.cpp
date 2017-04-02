@@ -9,6 +9,7 @@
 #include "../algorithm/MergeSort.h"
 #include "../algorithm/Quicksort.h"
 #include "../algorithm/BinarySearch.h"
+#include "../algorithm/BinarySearchTree.h"
 
 bool sortCheck(SortType* arr, SortType* src, size_t len) {
     std::unordered_map<int, int> srcNumberCount;
@@ -193,6 +194,51 @@ TEST(Structures, Stack) {
     } catch (StackOverflow&) {}
     catch (...) {
         FAIL() << "Expected StackOverflow";
+    }
+}
+
+TEST(Structures, BinarySearchTree) {
+    BinarySearchTree bst(0);
+    auto insertTest = [&bst](int value)
+    {
+        EXPECT_FALSE(bst.exist(value));
+        bst.insert(value);
+        EXPECT_TRUE(bst.exist(value));
+    };
+    insertTest(2);
+    insertTest(1);
+    insertTest(7);
+    insertTest(9);
+    insertTest(-10);
+    insertTest(-12);
+    insertTest(12);
+    insertTest(233);
+    insertTest(-8);
+    insertTest(-9);
+    insertTest(8);
+    try {
+        bst.insert(2);
+        FAIL() << "Expected ElementAlreadyExist";
+    }
+    catch (BinarySearchTree::ElementAlreadyExist&) {}
+    catch (...) {
+        FAIL() << "Expected ElementAlreadyExist";
+    }
+    auto removeTest = [&bst](int value) {
+        EXPECT_TRUE(bst.exist(value));
+        bst.remove(value);
+        EXPECT_FALSE(bst.exist(value));
+    };
+    removeTest(2);
+    insertTest(2);
+    removeTest(233);
+    try {
+        bst.remove(250);
+        FAIL() << "Expected ElementAlreadyExist";
+    }
+    catch (BinarySearchTree::ElementAlreadyExist&) {}
+    catch (...) {
+        FAIL() << "Expected ElementAlreadyExist";
     }
 }
 

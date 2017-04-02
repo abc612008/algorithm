@@ -46,5 +46,8 @@
     <ClInclude Include="BinarySearch.h">
       <Filter>Source Files\search</Filter>
     </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>Source Files\structures</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
